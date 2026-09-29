@@ -52,7 +52,7 @@ func TestPrepareRequestPreservesRemoteImagesAndReasoningEffort(t *testing.T) {
 	images := []string{"https://example.com/image.png"}
 	efforts := []struct{ input, want string }{
 		{"low", "low"}, {"medium", "medium"}, {"high", "high"}, {"xhigh", "xhigh"},
-		{"max", "xhigh"}, {"ultra", "ultra"}, {" MAX ", "xhigh"}, {"", "medium"},
+		{"max", "max"}, {"ultra", "ultra"}, {" MAX ", "max"}, {"", "medium"},
 	}
 	for _, image := range images {
 		for _, effort := range efforts {
