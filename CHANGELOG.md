@@ -1,5 +1,12 @@
 # 更新日志
 
+## v0.2.9 — 2026-09-29（UTC+8）
+
+- 将 `max` 作为独立的 Basis Points 推理等级原样透传，不再降级映射为 `xhigh`；`xhigh`（Extra High）、`max`（Max）和 `ultra` 保持为不同档位。
+- 保留 `x-high`、`extra-high`、`extra_high` 到 `xhigh` 的兼容别名，不改变 `low`、`medium`、`high`、`xhigh`、`ultra` 的既有行为。
+- 服务状态与模型目录一致声明 `max`，并更新 README 与回归测试，确认客户端 `reasoning.effort: max` 最终发送为上游 `reasoning_effort: max`。
+- 此版本基于上游 v0.2.8，供本 fork 自用发布；除上述 reasoning effort 修正与版本号更新外，不改变 Basis Points 路由和认证逻辑。
+
 ## v0.2.8 — 2026-09-29（UTC+8）
 
 - 修正工具中继说明中的固定示例：只为本轮允许的工具生成示例，使用真实完整名称、声明类型和匹配的参数结构，避免把函数形式的 `apply_patch` 错教成原始文本工具，或示范调用目录外、命名空间不匹配及本轮禁用的工具。
